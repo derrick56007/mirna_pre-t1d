@@ -48,9 +48,8 @@ def main(targets):
     # make the process target
     if 'process' in targets:
         process_data(**cfg)
-#         visualize_data(**cfg)
 
-    if 'test-project' in targets:
+    if 'project' in targets:
 #         shutil.rmtree('data/temp',ignore_errors=True)
 #         shutil.rmtree('data/out',ignore_errors=True)
 #         shutil.rmtree('data/test',ignore_errors=True)    
