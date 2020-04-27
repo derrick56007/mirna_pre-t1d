@@ -39,9 +39,11 @@ def main(targets):
         get_data(**cfg)
 
     # make the test target
-    if 'data-test' in targets:
+    if 'test' in targets:
         cfg = load_params(TEST_PARAMS)
         get_data(**cfg)
+        process_data(**cfg)
+        visualize_data(**cfg)
         
     # make the process target
     if 'process' in targets:
