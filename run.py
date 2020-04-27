@@ -46,7 +46,7 @@ def main(targets):
     # make the process target
     if 'process' in targets:
         process_data(**cfg)
-#         pca_visualization(**cfg)
+#         visualize_data(**cfg)
 
     if 'test-project' in targets:
 #         shutil.rmtree('data/temp',ignore_errors=True)
@@ -56,7 +56,7 @@ def main(targets):
         cfg = load_params(DATA_PARAMS)
         get_data(**cfg)
         process_data(**cfg)
-        pca_visualization(**cfg)
+        visualize_data(**cfg)
 
     return
 
