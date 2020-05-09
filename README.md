@@ -1,4 +1,4 @@
 
-# miRNA_T1Diabetes
+# miRNA_preT1Diabetes
 
 Pete Sheurpukdi & Derrick Liu
