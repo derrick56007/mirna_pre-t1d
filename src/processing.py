@@ -96,7 +96,10 @@ def process_data(file_url, raw_dir, file_name, temp_dir):
     print(df.head())
     
     g = produce_heatmap_data(temp_dir, raw_dir + file_name)
+    g = g.round(2)
+    g.to_csv(temp_dir + "heatmap.csv")
     print(g)
+    print("saved to", temp_dir)
     
     print("Done")
     return
