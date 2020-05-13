@@ -1,4 +1,4 @@
 
-# miRNA_preT1Diabetes
+# Understanding MiRNA in pre-Type 1 Diabetes
 
 Pete Sheurpukdi & Derrick Liu
