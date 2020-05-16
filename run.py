@@ -58,6 +58,16 @@ def main(targets):
         get_data(**cfg)
         process_data(**cfg)
         visualize_data(**cfg)
+        
+    if 'test-project' in targets:
+#         shutil.rmtree('data/temp',ignore_errors=True)
+#         shutil.rmtree('data/out',ignore_errors=True)
+#         shutil.rmtree('data/test',ignore_errors=True)    
+
+        cfg = load_params(DATA_PARAMS)
+        get_data(**cfg)
+        process_data(**cfg)
+        visualize_data(**cfg)        
 
     return
 
