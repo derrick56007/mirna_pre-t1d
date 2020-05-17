@@ -71,11 +71,15 @@ def main(targets):
 #         visualize_data(**cfg)        
 
 #         subprocess.call("src/visualization.r")
-        import os
-        cwd = os.getcwd()
-        print(cwd)
-        subprocess.call (["src/visualization.r"])
+        
+        print('healthy heatmap')
+        subprocess.call (["src/heatmap_healthy.r"])
 
+        print('pret1 heatmap')
+        subprocess.call (["src/heatmap_pret1d.r"])
+        
+        print('volcano')
+        subprocess.call (["src/volcano_plot_script.r"])
     return
 
 if __name__ == '__main__':

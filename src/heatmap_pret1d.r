@@ -3,7 +3,6 @@
 library(limma)
 library(reshape2)
 library(Glimma)
-library(reshape)
 library(edgeR)
 # # change this
 

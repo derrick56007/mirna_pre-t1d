@@ -1,3 +1,5 @@
+#! /usr/bin/Rscript
+
 library(limma)
 library(reshape2)
 library(Glimma)
@@ -10,7 +12,7 @@ library(amap)
 
 
 # WORKING DIR input
-setwd("C:\\Users\\Pete\\DSC180B-PROJECT")
+# setwd("C:\\Users\\Pete\\DSC180B-PROJECT")
 
 # ingestion inputs
 file_url = 'https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE44639&format=file'            
@@ -211,4 +213,4 @@ ggplot(volcanodf, aes(fold,fval)) +
 # text(fold,fval,labels=as.character(ifelse(F >= as.numeric(-sort(-F)[numToLabel]), colnames(F), NA)),cex=0.87) # cex is fontsize
 # # text(f10,F10,labels=colnames(-sort(-F)[1:10]),cex=0.8)
 
-ggsave("NAIVE_VOLCANO_PLOT.png")
+ggsave("data/temp/NAIVE_VOLCANO_PLOT.png")
