@@ -3,6 +3,7 @@
 import sys
 import json
 import shutil
+import subprocess
 
 # add library code to path
 sys.path.insert(0, 'src/')
@@ -66,8 +67,14 @@ def main(targets):
 
         cfg = load_params(DATA_PARAMS)
         get_data(**cfg)
-        process_data(**cfg)
-        visualize_data(**cfg)        
+#         process_data(**cfg)
+#         visualize_data(**cfg)        
+
+#         subprocess.call("src/visualization.r")
+        import os
+        cwd = os.getcwd()
+        print(cwd)
+        subprocess.call (["src/visualization.r"])
 
     return
 
