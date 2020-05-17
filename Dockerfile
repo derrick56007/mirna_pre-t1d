@@ -12,6 +12,18 @@ RUN apt-get install -y libcurl4-openssl-dev
 
 RUN apt-get install -y libssl-dev
 
+RUN apt-get install -y libfontconfig
+
+RUN apt-get install -y libssh2-1-dev
+
+RUN apt-get install -y libudunits2-dev
+
+RUN apt-get install -y libxml2-dev
+
+RUN apt-get install -y libgit2-dev
+
+RUN apt-get install -y libfontconfig1-dev
+
 RUN R -e "install.packages('BiocManager',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
 RUN R -e "BiocManager::install('limma')"
