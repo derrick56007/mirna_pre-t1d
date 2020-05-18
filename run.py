@@ -73,13 +73,13 @@ def main(targets):
 #         subprocess.call("src/visualization.r")
         
         print('healthy heatmap')
-        subprocess.call (["src/heatmap_healthy.r"])
+        subprocess.call (["./src/heatmap_healthy.r"], shell=True, executable='/bin/bash')
 
         print('pret1 heatmap')
-        subprocess.call (["src/heatmap_pret1d.r"])
+        subprocess.call (["./src/heatmap_pret1d.r"], shell=True, executable='/bin/bash')
         
         print('volcano')
-        subprocess.call (["src/volcano_plot_script.r"])
+        subprocess.call (["./src/volcano_plot_script.r"], shell=True, executable='/bin/bash')
     return
 
 if __name__ == '__main__':
