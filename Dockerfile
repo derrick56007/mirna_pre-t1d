@@ -24,23 +24,23 @@ RUN apt-get install -y libgit2-dev
 
 RUN apt-get install -y libfontconfig1-dev
 
-RUN R -e "install.packages('BiocManager',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('BiocManager',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
-RUN R -e "BiocManager::install('limma')"
+#RUN R -e "BiocManager::install('limma')"
 
-RUN R -e "BiocManager::install('edgeR')"
+#RUN R -e "BiocManager::install('edgeR')"
 
-RUN R -e "BiocManager::install('Glimma')"
+#RUN R -e "BiocManager::install('Glimma')"
 
-RUN R -e "install.packages('ggplot2',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('ggplot2',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('ggrepel',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('ggrepel',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('gplots',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('gplots',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('amap',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('amap',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('reshape2',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('reshape2',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
 RUN apt-get install -y python3.7
 
