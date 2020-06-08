@@ -9,12 +9,8 @@ import subprocess
 sys.path.insert(0, 'src/')
 
 # sys.path.insert(0, 'src/data')
-# sys.path.insert(0, 'src/processing')
-# sys.path.insert(0, 'src/visualization')
 
 from etl import get_data
-from processing import process_data
-from visualization import visualize_data
 
 DATA_PARAMS = 'config/config.json'
 TEST_PARAMS = 'config/test-config.json'
@@ -36,41 +32,26 @@ def main(targets):
     # make the data target
     if 'data' in targets:
         cfg = load_params(DATA_PARAMS)
-        
         get_data(**cfg)
 
     # make the test target
     if 'test' in targets:
         cfg = load_params(TEST_PARAMS)
         get_data(**cfg)
-        process_data(**cfg)
-        visualize_data(**cfg)
         
-    # make the process target
-    if 'process' in targets:
-        process_data(**cfg)
+        print('healthy heatmap')
+        subprocess.call (["./src/heatmap_healthy.r"], shell=True, executable='/bin/bash')
 
-    if 'project' in targets:
-#         shutil.rmtree('data/temp',ignore_errors=True)
-#         shutil.rmtree('data/out',ignore_errors=True)
-#         shutil.rmtree('data/test',ignore_errors=True)    
-
-        cfg = load_params(DATA_PARAMS)
-        get_data(**cfg)
-        process_data(**cfg)
-        visualize_data(**cfg)
+        print('pret1 heatmap')
+        subprocess.call (["./src/heatmap_pret1d.r"], shell=True, executable='/bin/bash')
         
+        print('volcano')
+        subprocess.call (["./src/volcano_plot_script.r"], shell=True, executable='/bin/bash')
+        
+    # make the project target
     if 'test-project' in targets:
-#         shutil.rmtree('data/temp',ignore_errors=True)
-#         shutil.rmtree('data/out',ignore_errors=True)
-#         shutil.rmtree('data/test',ignore_errors=True)    
-
         cfg = load_params(DATA_PARAMS)
         get_data(**cfg)
-#         process_data(**cfg)
-#         visualize_data(**cfg)        
-
-#         subprocess.call("src/visualization.r")
         
         print('healthy heatmap')
         subprocess.call (["./src/heatmap_healthy.r"], shell=True, executable='/bin/bash')
