@@ -26,33 +26,17 @@ def main(targets):
         shutil.rmtree('data/temp',ignore_errors=True)
         shutil.rmtree('data/out',ignore_errors=True)
         shutil.rmtree('data/test',ignore_errors=True)    
-
-    # make the data target
-    if 'data' in targets:
-        cfg = load_params(DATA_PARAMS)
-        get_data(**cfg)
-
-    # make the test target
-    if 'test' in targets:
-        cfg = load_params(TEST_PARAMS)
-        get_data(**cfg)
-        
-        print('heatmaps')
-        subprocess.call (["./src/heatmap.r"], shell=True, executable='/bin/bash')
-
-        print('volcano')
-        subprocess.call (["./src/volcano_plot_script.r"], shell=True, executable='/bin/bash')
         
     # make the project target
     if 'test-project' in targets:
         cfg = load_params(DATA_PARAMS)
-        get_data(**cfg)
+
+        print('volcano')
+        subprocess.call (["./src/volcano_plot_script.r"], shell=True, executable='/bin/bash')
         
         print('heatmaps')
         subprocess.call (["./src/heatmap.r"], shell=True, executable='/bin/bash')
         
-        print('volcano')
-        subprocess.call (["./src/volcano_plot_script.r"], shell=True, executable='/bin/bash')
     return
 
 if __name__ == '__main__':

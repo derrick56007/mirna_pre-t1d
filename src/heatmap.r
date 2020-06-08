@@ -6,6 +6,8 @@ library(Glimma)
 library(edgeR)
 library(gplots)
 
+temp_dir = "data/temp/"
+
 read_all_files_in_dir_with_columns <- function(file_dir, required_columns) {
     files <- list.files(path=file_dir)
     

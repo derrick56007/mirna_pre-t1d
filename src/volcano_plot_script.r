@@ -213,4 +213,4 @@ ggplot(volcanodf, aes(fold,fval)) +
 # text(fold,fval,labels=as.character(ifelse(F >= as.numeric(-sort(-F)[numToLabel]), colnames(F), NA)),cex=0.87) # cex is fontsize
 # # text(f10,F10,labels=colnames(-sort(-F)[1:10]),cex=0.8)
 
-ggsave("data/temp/NAIVE_VOLCANO_PLOT.png")
+ggsave("data/out/NAIVE_VOLCANO_PLOT.png")

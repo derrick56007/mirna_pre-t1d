@@ -1,9 +1,14 @@
-FROM derrick56007/mirna_pre_t1d:base2
+FROM derrick56007/mirna_pre_t1d:base
 
-WORKDIR /app
+WORKDIR /
 
-COPY . /app
+COPY . /
+
+RUN mkdir /data/
+RUN mkdir /data/out
 
 RUN dos2unix src/*
+
+RUN chmod -R 777 src/
 
 ENTRYPOINT []
