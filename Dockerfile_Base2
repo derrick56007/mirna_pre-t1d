@@ -10,3 +10,5 @@ RUN ln -s /usr/bin/python3 /usr/bin/python && \
 RUN pip install -r /app/requirements.txt
 
 RUN apt-get install -y dos2unix
+
+RUN rm -rf /var/lib/apt/lists/*

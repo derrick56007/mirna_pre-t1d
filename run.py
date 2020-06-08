@@ -37,12 +37,9 @@ def main(targets):
         cfg = load_params(TEST_PARAMS)
         get_data(**cfg)
         
-        print('healthy heatmap')
-        subprocess.call (["./src/heatmap_healthy.r"], shell=True, executable='/bin/bash')
+        print('heatmaps')
+        subprocess.call (["./src/heatmap.r"], shell=True, executable='/bin/bash')
 
-        print('pret1 heatmap')
-        subprocess.call (["./src/heatmap_pret1d.r"], shell=True, executable='/bin/bash')
-        
         print('volcano')
         subprocess.call (["./src/volcano_plot_script.r"], shell=True, executable='/bin/bash')
         
@@ -51,11 +48,8 @@ def main(targets):
         cfg = load_params(DATA_PARAMS)
         get_data(**cfg)
         
-        print('healthy heatmap')
-        subprocess.call (["./src/heatmap_healthy.r"], shell=True, executable='/bin/bash')
-
-        print('pret1 heatmap')
-        subprocess.call (["./src/heatmap_pret1d.r"], shell=True, executable='/bin/bash')
+        print('heatmaps')
+        subprocess.call (["./src/heatmap.r"], shell=True, executable='/bin/bash')
         
         print('volcano')
         subprocess.call (["./src/volcano_plot_script.r"], shell=True, executable='/bin/bash')
