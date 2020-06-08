@@ -8,8 +8,6 @@ import subprocess
 # add library code to path
 sys.path.insert(0, 'src/')
 
-# sys.path.insert(0, 'src/data')
-
 from etl import get_data
 
 DATA_PARAMS = 'config/config.json'
