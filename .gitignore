@@ -1,3 +1,5 @@
+.DS_STORE
+
 /data
 /notebooks/data
 /notebooks/glimma-plots
