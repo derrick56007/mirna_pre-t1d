@@ -4,9 +4,6 @@ WORKDIR /
 
 COPY . /
 
-RUN mkdir /data/
-RUN mkdir /data/out
-
 RUN dos2unix src/*
 
 RUN chmod -R 777 src/

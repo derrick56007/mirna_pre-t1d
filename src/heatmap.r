@@ -5,8 +5,16 @@ library(reshape2)
 library(Glimma)
 library(edgeR)
 library(gplots)
+library(rjson)
 
-temp_dir = "data/temp/"
+json <- fromJSON(file="config/config.json")
+
+# ingestion inputs
+file_url <- json["file_url"]$file_url
+raw_dir <- json["raw_dir"]$raw_dir
+temp_dir <- json["temp_dir"]$temp_dir   
+out_dir <- json["out_dir"]$out_dir
+file_name <- json["file_name"]$file_name
 
 read_all_files_in_dir_with_columns <- function(file_dir, required_columns) {
     files <- list.files(path=file_dir)
@@ -226,5 +234,8 @@ generate_heatmap_pt1 <- function(out_dir) {
     dev.off()
 }
 
-generate_heatmap_healthy('data/out/heatmap_healthy.png')
-generate_heatmap_pt1('data/out/heatmap_pt1d.png')
+path1 = paste(out_dir, "heatmap_healthy.png", sep="")
+path2 = paste(out_dir, "heatmap_pt1d.png", sep="")
+
+generate_heatmap_healthy(path1)
+generate_heatmap_pt1(path2)

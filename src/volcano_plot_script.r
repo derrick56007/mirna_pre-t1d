@@ -8,17 +8,22 @@ library(ggrepel)
 library(edgeR)
 library(gplots)
 library(amap)
+library(rjson)
 
-
-
-# WORKING DIR input
-# setwd("C:\\Users\\Pete\\DSC180B-PROJECT")
+json <- fromJSON(file="config/config.json")
 
 # ingestion inputs
-file_url = 'https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE44639&format=file'            
-raw_dir = "data/raw/"
-temp_dir = "data/temp/"
-file_name = 'GSE44639_RAW.tar'
+file_url <- json["file_url"]$file_url
+raw_dir <- json["raw_dir"]$raw_dir
+temp_dir <- json["temp_dir"]$temp_dir   
+out_dir <- json["out_dir"]$out_dir
+file_name <- json["file_name"]$file_name
+
+# file_url = 'https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE44639&format=file'            
+# raw_dir = "data/raw/"
+# temp_dir = "data/temp/"
+# out_dir = "data/out/"
+# file_name = 'GSE44639_RAW.tar'
 
 # ingest data function
 ingest_data <- function(file_url, file_name, raw_dir, temp_dir) {
@@ -31,7 +36,6 @@ ingest_data <- function(file_url, file_name, raw_dir, temp_dir) {
 }
 
 ingest_data(file_url, file_name, raw_dir, temp_dir)
-
 
 # transform ingested data into one concat df
 read_all_files_in_dir_with_columns <- function(file_dir, required_columns) {
@@ -213,4 +217,6 @@ ggplot(volcanodf, aes(fold,fval)) +
 # text(fold,fval,labels=as.character(ifelse(F >= as.numeric(-sort(-F)[numToLabel]), colnames(F), NA)),cex=0.87) # cex is fontsize
 # # text(f10,F10,labels=colnames(-sort(-F)[1:10]),cex=0.8)
 
-ggsave("data/out/NAIVE_VOLCANO_PLOT.png")
+out_path = paste(out_dir, "NAIVE_VOLCANO_PLOT.png", sep="")
+
+ggsave(out_path)

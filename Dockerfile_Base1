@@ -37,3 +37,5 @@ RUN R -e "install.packages('gplots',dependencies=TRUE,repos='http://cran.rstudio
 RUN R -e "install.packages('amap',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 
 RUN R -e "install.packages('reshape2',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+
+RUN R -e "install.packages('rjson',dependencies=TRUE,repos='http://cran.rstudio.com/')"
