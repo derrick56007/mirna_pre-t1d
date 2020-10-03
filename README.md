@@ -3,7 +3,7 @@
 
 By Pete Sheurpukdi & Derrick Liu
 
-This repository contains the code used our the paper [Understanding miRNA in pre-Type 1 Diabetes](https://github.com/Derrick56007/miRNA_preT1Diabetes/raw/master/report.pdf)
+This repository contains the code used in the paper [Understanding miRNA in pre-Type 1 Diabetes](https://github.com/Derrick56007/miRNA_preT1Diabetes/raw/master/report.pdf)
 
 Requirements
 ------------
